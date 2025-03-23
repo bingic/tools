@@ -25,7 +25,6 @@ require (
 	github.com/aws/smithy-go v1.22.1 // indirect
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-zookeeper/zk v1.0.3
-	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/google/uuid v1.6.0
 	github.com/jinzhu/copier v0.4.0
 	github.com/magefile/mage v1.15.0
@@ -70,6 +69,7 @@ require (
 )
 
 require (
+	github.com/golang-jwt/jwt/v4 v4.5.2
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.6
 	k8s.io/api v0.31.2

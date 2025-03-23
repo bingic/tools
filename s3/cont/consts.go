@@ -28,9 +28,9 @@ const (
 	// allowing large files to be uploaded in chunks.
 	UploadTypeMultipart = 1
 
-	// UploadTypePresigned signifies the use of presigned URLs for uploads,
+	// UploadTypePreSigned signifies the use of preSigned URLs for uploads,
 	// facilitating secure, authorized file transfers without requiring direct access to the storage credentials.
-	UploadTypePresigned = 2
+	UploadTypePreSigned = 2
 
 	// PartSeparator is used as a delimiter in multipart upload processes,
 	// separating individual file parts.

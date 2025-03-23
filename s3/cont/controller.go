@@ -119,7 +119,7 @@ func (c *Controller) InitiateUpload(ctx context.Context, hash string, size int64
 		}
 		return &InitiateUploadResult{
 			UploadID: newMultipartUploadID(multipartUploadID{
-				Type: UploadTypePresigned,
+				Type: UploadTypePreSigned,
 				ID:   "",
 				Key:  key,
 				Size: size,
@@ -209,7 +209,7 @@ func (c *Controller) CompleteUpload(ctx context.Context, uploadID string, partHa
 			return nil, err
 		}
 		targetKey = result.Key
-	case UploadTypePresigned:
+	case UploadTypePreSigned:
 		uploadInfo, err := c.StatObject(ctx, upload.Key)
 		if err != nil {
 			return nil, err
@@ -258,7 +258,7 @@ func (c *Controller) AuthSign(ctx context.Context, uploadID string, partNumbers 
 	switch upload.Type {
 	case UploadTypeMultipart:
 		return c.impl.AuthSign(ctx, upload.ID, upload.Key, time.Hour*24, partNumbers)
-	case UploadTypePresigned:
+	case UploadTypePreSigned:
 		return nil, errors.New("presigned id not support auth sign")
 	default:
 		return nil, errors.New("invalid upload id type")
